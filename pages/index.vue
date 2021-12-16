@@ -326,7 +326,7 @@ export default {
 
     createCompany() {
       if (this.$refs.companyform.validate()) {
-        this.companies.push(this.companyForm)
+        this.companies.push(JSON.parse(JSON.stringify(this.companyForm)))
         this.$store.commit('company/SET_COMPANIES', JSON.parse(JSON.stringify(this.companies)))
 
         this.messageAlert = 'Success create ' + this.companyForm.name + ' company data.'
@@ -345,9 +345,9 @@ export default {
         // const office = []
 
         if (this.tempCompany.office) {
-          this.tempCompany.office.push(this.officeForm)
+          this.tempCompany.office.push(JSON.parse(JSON.stringify(this.officeForm)))
         } else {
-          this.tempCompany.office = [this.officeForm]
+          this.tempCompany.office = [JSON.parse(JSON.stringify(this.officeForm))]
         }
 
         this.$store.commit('company/SET_COMPANIES', JSON.parse(JSON.stringify(this.companies)))
