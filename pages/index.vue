@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container class="my-sm-8">
+    <v-container class="my-8 mt-sm-8 mb-sm-16">
       <v-row>
         <v-col cols="12" md="6" class="pr-md-8" style="border-right: 1px solid #d6d4d5">
           <h1>Create Company</h1>
@@ -171,6 +171,9 @@
       <v-divider class="my-8"></v-divider>
 
       <h1 class="mb-6">Companies</h1>
+
+      <h3 v-if="companies.length < 1" class="font-weight-medium text-center">There is No Company Created Yet</h3>
+
       <v-row>
         <v-col v-for="(company, i) in companies" :key="'company' + i" cols="12" sm="6">
           <v-card class="rounded-8 shadow-card-sm" @click="toOfficePage(company)">

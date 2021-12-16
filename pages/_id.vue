@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container class="my-sm-8">
+    <v-container class="my-8 mt-sm-8 mb-sm-16">
       <template v-if="!company.name">
         <div class="text-center">
           <h1>Company Profile Not Found</h1>
